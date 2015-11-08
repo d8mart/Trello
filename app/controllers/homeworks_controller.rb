@@ -15,6 +15,7 @@ class HomeworksController < ApplicationController
   # GET /homeworks/new
   def new
     @homework = Homework.new
+    @users = User.all.map {|user| [user.username,user.id]}
   end
 
   # GET /homeworks/1/edit

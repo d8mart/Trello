@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :author %><br>
-    <%= f.text_field :author %>
+    <%= f.select :author, options_for_select(@users) %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
