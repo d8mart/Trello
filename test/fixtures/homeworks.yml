@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyText
+  title: hola m
+  description: nada
   duration: 2015-11-08 00:59:58
   start_date: 2015-11-08
   end_date: 2015-11-08
-  author: MyString
+  author: one
   status: false
 
 two:
-  title: MyString
-  description: MyText
+  title: ff
+  description: ss
   duration: 2015-11-08 00:59:58
   start_date: 2015-11-08
   end_date: 2015-11-08
-  author: MyString
+  author: two
   status: false
