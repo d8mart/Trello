@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @homework.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @homework.description %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @homework.duration %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @homework.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @homework.end_date %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @homework.author %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @homework.status %>
+</p>
+
+<%= link_to 'Edit', edit_homework_path(@homework) %> |
+<%= link_to 'Back', homeworks_path %>
