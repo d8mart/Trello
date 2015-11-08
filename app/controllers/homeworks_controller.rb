@@ -5,11 +5,13 @@ class HomeworksController < ApplicationController
   # GET /homeworks.json
   def index
     @homeworks = Homework.all
+    @users = User.all.map {|user| [user.username,user.id]}
   end
 
   # GET /homeworks/1
   # GET /homeworks/1.json
   def show
+    @users = User.all.map {|user| [user.username,user.id]}
   end
 
   # GET /homeworks/new
@@ -20,13 +22,14 @@ class HomeworksController < ApplicationController
 
   # GET /homeworks/1/edit
   def edit
+    @users = User.all.map {|user| [user.username,user.id]}
   end
 
   # POST /homeworks
   # POST /homeworks.json
   def create
     @homework = Homework.new(homework_params)
-
+    @users = User.all.map {|user| [user.username,user.id]}
     respond_to do |format|
       if @homework.save
         format.html { redirect_to @homework, notice: 'Homework was successfully created.' }
@@ -71,5 +74,6 @@ class HomeworksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def homework_params
       params.require(:homework).permit(:title, :description, :duration, :start_date, :end_date, :author, :status)
+     
     end
 end
