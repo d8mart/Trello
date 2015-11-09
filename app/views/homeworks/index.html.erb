@@ -18,7 +18,7 @@
       <tr>
         <td><%= homework.title %></td>
         <td><%= homework.end_date %></td>
-        <td><%= homework.author  %></td>
+        <td><%= User.find(id=homework.user_id).username  %></td>
         <td><%= link_to 'Show', homework %></td>
         <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
         <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,7 +47,7 @@
       <tr>
         <td><%= homework.title %></td>
         <td><%= homework.end_date %></td>
-        <td><%= homework.author  %></td>
+        <td><%= User.find(id=homework.user_id).username  %></td>
         <td><%= link_to 'Show', homework %></td>
         <td><%= link_to 'Edit', edit_homework_path(homework) %></td>
         <td><%= link_to 'Destroy', homework, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -11,6 +11,8 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.for(:sign_up) << :username
     devise_parameter_sanitizer.for(:sign_up) << :firstname
     devise_parameter_sanitizer.for(:sign_up) << :lastname
+    
+    devise_parameter_sanitizer.for(:sign_up) << :user_id
   end
   
 

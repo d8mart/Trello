@@ -31,10 +31,7 @@
     <%= f.label :end_date %><br>
     <%= f.date_select :end_date %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.select :author, options_for_select(@users) %>
-  </div>
+  
   <div class="field">
     <%= f.label :status %><br>
     <%= f.check_box :status %>
