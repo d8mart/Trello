@@ -5,8 +5,9 @@ class HomeworksController < ApplicationController
   # GET /homeworks
   # GET /homeworks.json
   def index
-    @homeworks = Homework.all
-    
+   # @homeworks = Homework.all
+    @homeworks = Homework.order(end_date: :asc).where(status:false)
+     @homeworks2 = Homework.order(end_date: :asc).where(status:true)
   end
 
   # GET /homeworks/1
@@ -99,6 +100,7 @@ class HomeworksController < ApplicationController
     
     private
   def get_users
-   @users = User.all.map {|user| [user.username,user.id]}
+   @users = User.all.map {|user| [user.firstname,user.username]}
+   #@users = ['xD',current_user.username]
   end
 end
