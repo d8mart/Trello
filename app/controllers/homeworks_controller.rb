@@ -17,13 +17,26 @@ class HomeworksController < ApplicationController
 
   # GET /homeworks/new
   def new
-    @homework = Homework.new
+      @homework = Homework.new
+    if user_signed_in?
+     @homework = Homework.new
+    else
+      redirect_to homeworks_path  
+      flash.alert = "You must be logged in"
+    
+    end
+  
     
   end
 
   # GET /homeworks/1/edit
   def edit
-   
+    if user_signed_in?
+     
+    else
+      redirect_to homeworks_path
+       flash.alert = "You must be logged in"
+    end
   end
 
   # POST /homeworks
@@ -58,10 +71,17 @@ class HomeworksController < ApplicationController
   # DELETE /homeworks/1
   # DELETE /homeworks/1.json
   def destroy
-    @homework.destroy
-    respond_to do |format|
+
+    
+    if user_signed_in?
+         @homework.destroy
+     respond_to do |format|
       format.html { redirect_to homeworks_url, notice: 'Homework was successfully destroyed.' }
       format.json { head :no_content }
+     end
+    else
+      redirect_to homeworks_path
+       flash.alert = "You must be logged in"
     end
   end
 
