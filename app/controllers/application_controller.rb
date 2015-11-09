@@ -13,10 +13,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.for(:sign_up) << :lastname
   end
   
-   private
-  def current_user
-    User.where(id: session[:user_id]).first
-  end
-  helper_method :current_user
+
   
 end
