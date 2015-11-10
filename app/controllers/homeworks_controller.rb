@@ -6,7 +6,8 @@ class HomeworksController < ApplicationController
   # GET /homeworks.json
   def index
    # @homeworks = Homework.all
-    @homeworks = Homework.order(end_date: :asc).where(status:false)
+    @homeworks = Homework.order(end_date: :asc).where(status:false).where("end_date > ?" , DateTime.now)
+     @homeworks3 = Homework.order(end_date: :asc).where(status:false).where("end_date < ?" , DateTime.now)
      @homeworks2 = Homework.order(end_date: :asc).where(status:true)
      
   end
